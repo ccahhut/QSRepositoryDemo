@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4AB9F60F-2D72-4E2A-846C-BCD68FEF01B4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QManage</RootNamespace>
+    <AssemblyName>QTaxInterface</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+    <ApplicationIcon>server.ico</ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>B7ED2BE54C28ABF00C24E3392BF1879A60FAAF71</ManifestCertificateThumbprint>
+    <ManifestKeyFile>ETicket_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <PublishUrl>C:\程序\电子券\ETMC\Setup\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassAuthRemote.cs" />
+    <Compile Include="common\FrmFactory.cs" />
+    <Compile Include="common\FrmQryBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="common\FrmQryBar.Designer.cs">
+      <DependentUpon>FrmQryBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="common\FrmWaiter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="common\FrmWaiter.Designer.cs">
+      <DependentUpon>FrmWaiter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="common\listViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="common\listViewFun.cs" />
+    <Compile Include="common\ListViewSorter.cs" />
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tools\Busi.cs" />
+    <Compile Include="tools\DataInfo.cs" />
+    <Compile Include="tools\DBUtils.cs" />
+    <Compile Include="tools\DESTools.cs" />
+    <Compile Include="tools\FConst.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="common\FrmQryBar.resx">
+      <DependentUpon>FrmQryBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="common\FrmWaiter.resx">
+      <DependentUpon>FrmWaiter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="tools\FunTax.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tools\IniFile.cs" />
+    <Compile Include="tools\pubClass.cs" />
+    <Compile Include="tools\Fun.cs" />
+    <Compile Include="tools\SoundPlay.cs" />
+    <Compile Include="tools\WebServiceProxy.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{00000206-0000-0010-8000-00AA006D2EA4}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="BusinessObjects.CrystalReports.10.5">
+      <Visible>False</Visible>
+      <ProductName>Crystal Reports Basic for Visual Studio 2008 %28x86, x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\导航.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\切换用户.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\暂时离开.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\更改密码.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\退出系统.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\关闭子窗口.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\小图标\帮助.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\小图标\查找.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\小图标\错误.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\小图标\解锁.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\小图标\确定.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\小图标\锁定.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\小图标\文件夹.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\小图标\增加.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\小图标\修改.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\小图标\刷新.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\小图标\退出.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\小图标\导出.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\小图标\类似增加.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\小图标\权限管理.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="face\MP10\MP10.ssk" />
+    <None Include="face\MSN\MSN.ssk" />
+    <None Include="img\default.jpg" />
+    <None Include="img\kb.bmp" />
+    <None Include="img\BackGroundImage.bmp" />
+    <None Include="img\ico\arrow1.ICO" />
+    <None Include="img\ico\arrow2.ICO" />
+    <None Include="img\ico\arrow3.ICO" />
+    <None Include="img\小图标\1.gif" />
+    <None Include="img\小图标\2.gif" />
+    <None Include="img\小图标\3.gif" />
+    <None Include="img\小图标\4.gif" />
+    <None Include="img\小图标\5.gif" />
+    <None Include="img\小图标\打印.png" />
+    <None Include="img\BackGroundImage.jpg" />
+    <Content Include="face\MP10\mp10.gif" />
+    <Content Include="face\MSN\msn.gif" />
+    <None Include="img\小图标\删除.png" />
+    <None Include="img\小图标\arrow_down.png" />
+    <None Include="img\小图标\arrow_left.png" />
+    <None Include="img\小图标\arrow_right.png" />
+    <None Include="img\小图标\arrow_up.png" />
+    <Content Include="img\小图标\文件夹选中.png" />
+    <None Include="img\登录.jpg" />
+    <None Include="img\无图片.png" />
+    <None Include="server.ico" />
+    <Content Include="程序.ico" />
+    <None Include="img\小图标\查询.png" />
+    <None Include="img\小图标\详情.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="busi\" />
+    <Folder Include="data\" />
+    <Folder Include="info\" />
+    <Folder Include="log\" />
+    <Folder Include="qry\" />
+    <Folder Include="role\" />
+    <Folder Include="sys\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,3 @@
+E:\MyProgram\排队叫号\Source\QManage\bin\Release\MKClient.exe.config
+E:\MyProgram\排队叫号\Source\QManage\obj\Release\Interop.T6Operator.dll
+E:\MyProgram\排队叫号\Source\QManage\obj\Release\MKClient.csproj.ResolveComReference.cache
